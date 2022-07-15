@@ -26,6 +26,12 @@ module.exports = class Product {
   }
 
   static fetchAll() {
+    fs.readFile(p, (err, fileContent) => {
+      if (err) {
+        return [];
+      }
+      return JSON.parse(fileContent);
+    })
     return products;
   }
 }
